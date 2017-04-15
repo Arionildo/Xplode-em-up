@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float moveForce = 1000;
 	public float jumpForce = 500;
-	Rigidbody rb;
+    public float maxSpeed = 10f;
+    Rigidbody rb;
 	float maxDistanceToGround;
 
 	void Start () {
@@ -24,11 +25,14 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Move () {
-		//Sets the speed according to the given movement force
-		float speed =  moveForce * Time.deltaTime;
+        float acceleration = 0f;
+
+        if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+            //Sets the speed according to the given movement force
+            acceleration =  moveForce * Time.deltaTime;
 
 		//Applies force in a given direction (if not set by player, anything happens) to move the character with its previously calculated speed
-		rb.AddForce (Input.GetAxis ("Horizontal") * speed , 0, 0);
+		rb.AddForce (Input.GetAxis ("Horizontal") * acceleration , 0, 0);
 	}
 
 	void Jump () {
