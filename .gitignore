@@ -1,5 +1,35 @@
+# =============== #
+# Unity generated #
+# =============== #
 Fonte/Xplode'em'Up/Temp/
+Fonte/Xplode'em'Up/Obj/
+Fonte/Xplode'em'Up/Build
 Fonte/Xplode'em'Up/Library/
+sysinfo.txt
+*.stackdump
+ 
+# ============================================= #
+# Visual Studio / MonoDevelop / Rider generated #
+# ============================================= #
+ExportedObj/
+*.vs/
+*.userprefs
 *.csproj
-Fonte/Xplode'em'Up/.vs/
-*.meta
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+*.idea*/
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
