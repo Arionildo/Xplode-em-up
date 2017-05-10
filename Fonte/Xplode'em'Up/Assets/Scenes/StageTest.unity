@@ -1470,6 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d259241d6d3f347ad7b5917c8f301a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTimeScale: 1
 --- !u!4 &1500247268
 Transform:
   m_ObjectHideFlags: 0
@@ -1798,6 +1799,8 @@ MonoBehaviour:
   moveForce: 1000
   jumpForce: 400
   maxSpeed: 50
+  rb: {fileID: 0}
+  maxDistanceToGround: 0
 --- !u!1 &1805472024
 GameObject:
   m_ObjectHideFlags: 0

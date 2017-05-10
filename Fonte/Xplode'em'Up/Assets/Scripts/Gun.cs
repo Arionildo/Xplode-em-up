@@ -23,6 +23,8 @@ public class Gun : MonoBehaviour {
         mousePosition.x -= Screen.width / 2;
         mousePosition.y -= Screen.height / 2;
 
+		Debug.Log ("x: " + mousePosition.x + "; y: " + mousePosition.y + "; z: " + mousePosition.z);
+
         transform.LookAt(mousePosition);
     }
 }
