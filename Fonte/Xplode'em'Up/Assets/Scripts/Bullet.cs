@@ -11,8 +11,40 @@ public class Bullet : MonoBehaviour {
         Destroy(gameObject, lifetime);
 	}
 
-    private void OnCollisionEnter(Collision col) {
+    private void OnTriggerEnter(Collider col) {
         //Should destroy on any collision
+        if (col.transform.tag.Equals("ShieldOrc"))
+        {
+            Debug.Log("Acertou Shield");
+       }
+        if (col.transform.tag.Equals("Inimigo"))
+        {
+            Debug.Log("Acertou Inimigo");
+            Destroy(col.gameObject);
+        }
+        if (col.transform.tag.Equals("Cubo"))
+        {
+            Debug.Log("Acertou Cubo");
+        }
+        if (col.transform.tag.Equals("Floor"))
+        {
+            Debug.Log("Acertou Floor");
+        }
+        if (col.transform.tag.Equals("Wall"))
+        {
+            Debug.Log("Acertou Floor");
+        }
         Destroy(gameObject);
     }
+    /* private void OnTriggerEnter(Collider col)
+    {
+        //Should destroy on any collision
+        if (col.transform.tag.Equals("ShieldOrc"))
+        {
+            Debug.Log("Acertou Shield");
+        }
+       
+        Destroy(gameObject);
+    }*/
+
 }
