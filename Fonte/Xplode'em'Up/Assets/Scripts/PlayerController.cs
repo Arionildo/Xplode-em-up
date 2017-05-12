@@ -31,22 +31,17 @@ public class PlayerController : MonoBehaviour {
 
     void Movement()
     {  
-        
-            
-            x = Input.GetAxis("Horizontal")*maxSpeed* Time.deltaTime;
-        // y = Input.GetAxis("Vertical")*maxSpeed *Time.deltaTime;
+        x = Input.GetAxis("Horizontal")*maxSpeed* Time.deltaTime;
+			
         if (cc.isGrounded)
-        {
-            if (Input.GetKeyDown(KeyCode.W)) forca_cima = y;
-        }
-        if (!cc.isGrounded)
-        {
+            if (Input.GetKeyDown(KeyCode.W))
+				forca_cima = y;
+        else
             forca_cima += gravity * Time.deltaTime;
-        }
 
         forca_movimento = new Vector3(x, forca_cima, 0);
-            forca_convertida = transform.TransformDirection(forca_movimento);
-            cc.Move(forca_convertida);
+		forca_convertida = transform.TransformDirection(forca_movimento);
+		cc.Move(forca_convertida);
         
     }
 
