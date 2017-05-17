@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 
 	private void SetTimeScale() {
 		Time.timeScale = gm.currentTimeScale;
-		playerController.enabled = gm.currentTimeScale > 0 ? true : false;
+    
 //		gun.enabled = gm.currentTimeScale > 0 ? true : false;
 	}
 }

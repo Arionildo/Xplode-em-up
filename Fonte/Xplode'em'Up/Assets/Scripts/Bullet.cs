@@ -9,18 +9,20 @@ public class Bullet : MonoBehaviour {
 	void Update () {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(gameObject, lifetime);
+        
 	}
 
     private void OnTriggerEnter(Collider col) {
         //Should destroy on any collision
         if (col.transform.tag.Equals("ShieldOrc"))
         {
+           
             Debug.Log("Acertou Shield");
        }
         if (col.transform.tag.Equals("Inimigo"))
         {
             Debug.Log("Acertou Inimigo");
-            Destroy(col.gameObject);
+           
         }
         if (col.transform.tag.Equals("Cubo"))
         {
