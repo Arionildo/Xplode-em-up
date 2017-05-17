@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 forca_movimento, forca_convertida;
 
    
-	float maxDistanceToGround;
+
     private CharacterController cc;
 
     void Start () {
@@ -27,11 +27,7 @@ public class PlayerController : MonoBehaviour {
         if (transform.position.y <= -20) transform.position = new Vector3 (0,1,0);
        // cc.Move(new Vector3(0, gravity* Time.deltaTime, 0));
 
-    private void OnColliderEnter(Collision col)
-    {
-        if (col.transform.tag.Equals("Inimigo") || col.transform.tag.Equals("ShieldOrc"))
-            GameManager.ResetStage();
-    }
+    
 
         Movement();
         forca_cima = 0;
@@ -57,6 +53,14 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-   
+    void OnControllerColliderHit(ControllerColliderHit col)
+    {
+        
+        if (col.transform.tag.Equals("Inimigo") || col.transform.tag.Equals("ShieldOrc"))
+        {
+            Debug.Log("Colidiu");
+            GameManager.ResetStage();
+        }
+    }
 
 }
