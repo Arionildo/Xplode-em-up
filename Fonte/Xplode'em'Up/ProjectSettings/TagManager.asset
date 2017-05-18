@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Nothing
+  - ShieldOrc
+  - Inimigo
+  - Cubo
+  - Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX

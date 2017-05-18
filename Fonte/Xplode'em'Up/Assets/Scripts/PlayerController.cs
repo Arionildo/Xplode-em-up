@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
    
-	public float x = 1000;
-	public float y = 500;
+	public float x = 5;
+	public float y = 1;
     public float maxSpeed = 100 ;
     public float gravity = -9;
     public float forca_cima, forca_lado;
@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour {
 
     private CharacterController cc;
 
-    void Start () {
-        forca_cima = forca_lado = 0;    
+    void Start () {    
 
         cc = GetComponent<CharacterController>();
 
@@ -24,30 +23,25 @@ public class PlayerController : MonoBehaviour {
 
 	void Update () {
 
-        if (transform.position.y <= -20) transform.position = new Vector3 (0,1,0);
-       // cc.Move(new Vector3(0, gravity* Time.deltaTime, 0));
-
-    
-
+        if (transform.position.y <= -20)
+            transform.position = new Vector3 (0,1,0);
+         
         Movement();
-        forca_cima = 0;
+
     }
 
     void Movement()
     {  
-        x = Input.GetAxis("Horizontal")*maxSpeed* Time.deltaTime;
+        forca_lado = Input.GetAxis("Horizontal")*x* Time.deltaTime;
 
-        if (cc.isGrounded)
-            if (Input.GetKeyDown(KeyCode.W))
-                forca_cima = y;
-            else
-            {
-               
-
-                forca_cima += gravity * Time.deltaTime;
-
-            }
-        forca_movimento = new Vector3(x, forca_cima, 0);
+        if (!cc.isGrounded)
+            forca_cima += gravity * Time.deltaTime;
+        else forca_cima = -1;
+        if (Input.GetKeyDown(KeyCode.W)&& (cc.isGrounded))
+                forca_cima= y;
+           
+            
+        forca_movimento = new Vector3(forca_lado, forca_cima, 0);
 		forca_convertida = transform.TransformDirection(forca_movimento);
 		cc.Move(forca_convertida);
         
