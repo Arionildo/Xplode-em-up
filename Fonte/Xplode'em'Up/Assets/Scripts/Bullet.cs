@@ -38,15 +38,5 @@ public class Bullet : MonoBehaviour {
         }
         Destroy(gameObject);
     }
-    /* private void OnTriggerEnter(Collider col)
-    {
-        //Should destroy on any collision
-        if (col.transform.tag.Equals("ShieldOrc"))
-        {
-            Debug.Log("Acertou Shield");
-        }
-       
-        Destroy(gameObject);
-    }*/
 
 }

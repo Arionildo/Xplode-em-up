@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-   
+
+    public float maxHP = 100;
+    public float currentHP;
 	public float x = 5;
 	public float y = 1;
     public float maxSpeed = 100 ;
@@ -18,7 +21,7 @@ public class PlayerController : MonoBehaviour {
     void Start () {    
 
         cc = GetComponent<CharacterController>();
-
+        currentHP = maxHP;
     }
 
 	void Update () {
@@ -28,6 +31,12 @@ public class PlayerController : MonoBehaviour {
          
         Movement();
 
+        if (!IsAlive())
+            GameManager.ResetStage(); ;
+    }
+
+    private bool IsAlive() {
+        return currentHP > 0 ? true : false;
     }
 
     void Movement()
@@ -53,7 +62,7 @@ public class PlayerController : MonoBehaviour {
         if (col.transform.tag.Equals("Inimigo") || col.transform.tag.Equals("ShieldOrc"))
         {
             Debug.Log("Colidiu");
-            GameManager.ResetStage();
+            currentHP -= 5;
         }
     }
 

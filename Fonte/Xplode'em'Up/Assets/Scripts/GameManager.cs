@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 	private PlayerController playerController;
+    private Slider currentHP;
 //	private Gun gun;
 	public static GameManager gm;
 	public float currentTimeScale = 1;
@@ -21,15 +24,22 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        currentHP = GameObject.FindGameObjectWithTag("HUD").GetComponentInChildren<Slider>();
+        currentHP.value = playerController.maxHP;
 //		gun = playerController.GetComponentInChildren<Gun>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		SetTimeScale();
+        UpdateHUD();
 	}
 
-	public static void ResetStage() {
+    private void UpdateHUD() {
+        currentHP.value = playerController.currentHP < 0 ? 0 : playerController.currentHP;
+    }
+
+    public static void ResetStage() {
 		SceneManager.LoadScene("StageTest");
 	}
 

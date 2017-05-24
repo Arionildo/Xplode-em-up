@@ -2,10 +2,10 @@
 
 public class EnemyIA : MonoBehaviour
 {
+    private new Collider collider;
     private float uTurn = 180;
     public float maxDistance = 3;
     public float movespeed = 10;
-    private Collider collider;
 
     // Use this for initialization
     void Start()
@@ -28,10 +28,7 @@ public class EnemyIA : MonoBehaviour
         //Will flip his own direction when next to an obstacle, unless it's facing the Player
         if (hit.distance > maxDistance
             || hit.transform.tag.Equals("Player")
-         //   || hit.transform.tag.Equals("Bullet")
             || hit.transform.tag.Equals("Floor"))
-          //  || hit.transform.tag.Equals("Inimigo"))
-           // || hit.transform.tag.Equals("Nothing"))
 
             transform.Translate(Vector3.right * movespeed * Time.deltaTime);
         else
@@ -44,5 +41,8 @@ public class EnemyIA : MonoBehaviour
             GameManager.ResetStage();
     }
 
-
+    private void OnTriggerEnter(Collider col) {
+        if (col.transform.tag.Equals("Bullet"))
+            Destroy(gameObject);
+    }
 }
