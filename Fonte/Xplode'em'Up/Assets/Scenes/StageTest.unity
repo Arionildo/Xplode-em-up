@@ -1692,20 +1692,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114914909007336406, guid: 7cdf1378cbec92940a2f661d96e77f2a,
-        type: 2}
-      propertyPath: movespeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214319889456616, guid: 7cdf1378cbec92940a2f661d96e77f2a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 65542847534518720, guid: 7cdf1378cbec92940a2f661d96e77f2a,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cdf1378cbec92940a2f661d96e77f2a, type: 2}
   m_IsPrefabParent: 0
@@ -2128,6 +2114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54eedf7933947934a8c39b80d6c3cf36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
   x: 13
   y: 1.3
   maxSpeed: 5

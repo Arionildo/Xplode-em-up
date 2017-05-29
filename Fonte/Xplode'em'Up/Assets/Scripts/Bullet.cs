@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
     public float speed = 10f;
     public float lifetime = 1f;
+	public float damage = 30;
 
 	void Update () {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);

@@ -6,12 +6,17 @@ public class EnemyIA : MonoBehaviour
     private float uTurn = 180;
     public float maxDistance = 3;
     public float movespeed = 10;
+	public float maxHP = 100;
+	public float currentHP = 100;
+	public float armor = 10;		//Reduces N of damage
 
     // Use this for initialization
     void Start()
     {
         collider = GetComponent<Collider>();
 
+		//Fixes currentHP with maxHP if needed
+		currentHP = currentHP > maxHP ? maxHP : currentHP;
     }
 
     // Update is called once per frame
@@ -42,7 +47,17 @@ public class EnemyIA : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider col) {
-        if (col.transform.tag.Equals("Bullet"))
-            Destroy(gameObject);
+		if (col.transform.tag.Equals ("Bullet")) {
+			float damage = col.transform.GetComponent<Bullet>().damage;
+
+			TakeDamage(damage);
+
+			if (currentHP <= 0)
+				Destroy(gameObject);				
+		}
     }
+
+	private void TakeDamage(float damage) {
+		currentHP = currentHP - (damage - armor);
+	}
 }
