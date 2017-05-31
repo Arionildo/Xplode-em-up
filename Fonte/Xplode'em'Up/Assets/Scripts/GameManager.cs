@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        currentHP = GameObject.FindGameObjectWithTag("HUD").GetComponentInChildren<Slider>();
+        //currentHP = GameObject.FindGameObjectWithTag("HUD").GetComponentInChildren<Slider>();
         currentHP.value = playerController.maxHP;
 //		gun = playerController.GetComponentInChildren<Gun>();
     }
@@ -32,12 +32,12 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		SetTimeScale();
-        UpdateHUD();
+      //  UpdateHUD();
 	}
 
-    private void UpdateHUD() {
-        currentHP.value = playerController.currentHP < 0 ? 0 : playerController.currentHP;
-    }
+   // private void UpdateHUD() {
+     //   currentHP.value = playerController.currentHP < 0 ? 0 : playerController.currentHP;
+    //}
 
     public static void ResetStage() {
 		SceneManager.LoadScene("StageTest");

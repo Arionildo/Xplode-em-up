@@ -8,7 +8,7 @@ public class EnemyIA : MonoBehaviour
     public float movespeed = 10;
 	public float maxHP = 100;
 	public float currentHP = 100;
-	public float armor = 10;		//Reduces N of damage
+	public float armor = 15;		//Reduces N of damage
 
     // Use this for initialization
     void Start()
