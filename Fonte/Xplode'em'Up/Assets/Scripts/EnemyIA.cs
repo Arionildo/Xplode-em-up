@@ -30,8 +30,12 @@ public class EnemyIA : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(collider.transform.position, transform.right , out hit);
 
-        //Will flip his own direction when next to an obstacle, unless it's facing the Player
-        if (hit.distance > maxDistance
+		if (hit.transform == null && transform.position.z != 0f) {
+			Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, 0f);
+			transform.position = Vector3.MoveTowards(transform.position, targetPosition, movespeed * Time.deltaTime);
+		}
+		//Will flip his own direction when next to an obstacle, unless it's facing the Player
+		else if (hit.distance > maxDistance
             || hit.transform.tag.Equals("Player")
             || hit.transform.tag.Equals("Floor"))
 

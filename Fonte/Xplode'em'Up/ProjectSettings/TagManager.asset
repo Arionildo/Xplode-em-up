@@ -11,6 +11,8 @@ TagManager:
   - Cubo
   - Wall
   - Bullet
+  - HUD
+  - Timer
   layers:
   - Default
   - TransparentFX

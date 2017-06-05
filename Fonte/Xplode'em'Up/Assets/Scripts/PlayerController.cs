@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float maxHP = 100;
-    public float currentHP;
+    public float currentHP = 100;
 	public float x = 5;
 	public float y = 1;
     public float maxSpeed = 100 ;
@@ -25,14 +25,10 @@ public class PlayerController : MonoBehaviour {
     }
 
 	void Update () {
-
-        if (transform.position.y <= -20)
-            transform.position = new Vector3 (0,1,0);
-         
         Movement();
 
-        if (!IsAlive())
-            GameManager.ResetStage(); ;
+		if (!IsAlive() || transform.position.y <= -20)
+            GameManager.ResetStage();
     }
 
     private bool IsAlive() {

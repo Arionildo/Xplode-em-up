@@ -173,10 +173,9 @@ GameObject:
   - component: {fileID: 4735233902223228}
   - component: {fileID: 33000415792640564}
   - component: {fileID: 65978936005375566}
-  - component: {fileID: 23995808320623766}
-  - component: {fileID: 114243718544676650}
   - component: {fileID: 54662135938964888}
-  - component: {fileID: 114199903247259926}
+  - component: {fileID: 114517418240411308}
+  - component: {fileID: 114082623547301122}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Inimigo
@@ -578,8 +577,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072054324538916}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.17, y: -0.51, z: -0.05}
-  m_LocalScale: {x: 0.62, y: 0.56, z: 0.79}
+  m_LocalPosition: {x: 0.19623, y: -0.69, z: -0.018561}
+  m_LocalScale: {x: 1.0541967, y: 0.9521776, z: 1.3432505}
   m_Children:
   - {fileID: 4634322735522400}
   - {fileID: 4457452566952750}
@@ -627,38 +626,6 @@ Transform:
   m_Father: {fileID: 4912046748140186}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23995808320623766
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1544951580585152}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 3a4eec87bbce0524d981de5c18a07880, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &33000415792640564
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -679,7 +646,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &65978936005375566
 BoxCollider:
@@ -703,7 +670,7 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400016, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
   m_Animations:
-  - {fileID: 7400028, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
+  - {fileID: 7400000, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
   - {fileID: 7400002, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
   - {fileID: 7400004, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
   - {fileID: 7400006, guid: d19f0e375a0203a4ca72964404dbd39e, type: 3}
@@ -721,7 +688,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 1
   m_CullingType: 1
---- !u!114 &114199903247259926
+--- !u!114 &114082623547301122
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -729,18 +696,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1544951580585152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89754e39563cf9b4f800993d5429260d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114243718544676650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1544951580585152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84e1343ab46e144fa826ccd047cb304, type: 3}
+  m_Script: {fileID: 11500000, guid: f007981283efa2145938cccc339af636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 3
@@ -748,6 +704,17 @@ MonoBehaviour:
   maxHP: 30
   currentHP: 100
   armor: 0
+--- !u!114 &114517418240411308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544951580585152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7566ee111a3a9d4b86fc0565e196650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137995136130409334
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

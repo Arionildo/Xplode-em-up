@@ -60,7 +60,6 @@ ModelImporter:
     7400022: jump
     7400024: fly
     7400026: land
-    7400028: walk (1)
     9500000: //RootNode
     11100000: //RootNode
     13700000: 1
@@ -84,9 +83,77 @@ ModelImporter:
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
-    animationWrapMode: 2
+    animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 1
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1
+        weight: 1
+      - path: Bn_Root
+        weight: 1
+      - path: Bn_Root/Bn_1
+        weight: 1
+      - path: Bn_Root/Bn_1/Bn_2
+        weight: 1
+      - path: Bn_Root/Bn_1/Bn_2/Be_3
+        weight: 1
+      - path: Bn_Root/Bn_1/Bn_2/Bone001
+        weight: 1
+      - path: Bn_Root/Bn_1/Bn_2/Bone001/Be
+        weight: 1
+      - path: Bn_Root/Bn_1/Bone004(mirrored)(mirrored)
+        weight: 1
+      - path: Bn_Root/Bn_1/Bone004(mirrored)(mirrored)/Bone005(mirrored)(mirrored)
+        weight: 1
+      - path: Bn_Root/Bn_1/Bone004(mirrored)(mirrored)/Bone005(mirrored)(mirrored)/Be(mirrored)
+        weight: 1
+      - path: Bn_Root/Bn_1/Bone004(mirrored)(mirrored)(mirrored)
+        weight: 1
+      - path: Bn_Root/Bn_1/Bone004(mirrored)(mirrored)(mirrored)/Bone005(mirrored)(mirrored)(mirrored)
+        weight: 1
+      - path: Bn_Root/Bn_1/Bone004(mirrored)(mirrored)(mirrored)/Bone005(mirrored)(mirrored)(mirrored)/Be(mirrored)(mirrored)
+        weight: 1
+      - path: Bn_Root/Bone007
+        weight: 1
+      - path: Bn_Root/Bone007/Bone008
+        weight: 1
+      - path: Bn_Root/Bone007/Bone008/Be_0
+        weight: 1
+      - path: Bn_Root/Bone007(mirrored)
+        weight: 1
+      - path: Bn_Root/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Bn_Root/Bone007(mirrored)/Bone008(mirrored)/Be_1
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: idle_action
       takeName: idle_action
@@ -572,7 +639,7 @@ ModelImporter:
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
-      loop: 1
+      loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
@@ -974,7 +1041,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
