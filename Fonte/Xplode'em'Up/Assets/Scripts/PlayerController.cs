@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    private float offset = 90f;
+
     public float maxHP = 100;
     public float currentHP = 100;
 	public float x = 5;
@@ -40,13 +42,13 @@ public class PlayerController : MonoBehaviour {
         if (gun.transform.localRotation.y < 0)
         {
             modeloPlayer.transform.eulerAngles = new Vector3(0, 270, 0);
-            colunaRot.z = -gun.transform.eulerAngles.x + 90;
+            colunaRot.z = -gun.transform.eulerAngles.x + offset;
             colunaRot.x = 180f;
         }
         else
         {
             modeloPlayer.transform.eulerAngles = new Vector3(0, 90, 0);
-            colunaRot.z = -gun.transform.eulerAngles.x - 90;
+            colunaRot.z = -gun.transform.eulerAngles.x - offset;
             colunaRot.x = 0f;
         }
 
