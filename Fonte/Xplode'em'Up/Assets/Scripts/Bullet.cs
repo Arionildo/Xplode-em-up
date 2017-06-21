@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
     public float speed = 10f;
     public float lifetime = 1f;
 	public float damage = 30;
+    public GameObject explosao;
 
 	void Update () {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -37,6 +38,8 @@ public class Bullet : MonoBehaviour {
         {
             Debug.Log("Acertou Floor");
         }
+
+        Instantiate(explosao, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 

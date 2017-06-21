@@ -13,9 +13,12 @@ public class PlayerController : MonoBehaviour {
     public float gravity = -9;
     public float forca_cima, forca_lado;
     Vector3 forca_movimento, forca_convertida;
-
-   
-
+    public GameObject modeloPlayer;
+    public Animator animPlayer;
+    public GameObject colunaPlayer;
+    public GameObject gun;
+    public Vector3 colunaRot;
+    
     private CharacterController cc;
 
     void Start () {    
@@ -29,6 +32,26 @@ public class PlayerController : MonoBehaviour {
 
 		if (!IsAlive() || transform.position.y <= -20)
             GameManager.ResetStage();
+    }
+
+    private void LateUpdate()
+    {
+        //Virar modelo e coluna do player
+        if (gun.transform.localRotation.y < 0)
+        {
+            modeloPlayer.transform.eulerAngles = new Vector3(0, 270, 0);
+            colunaRot.z = -gun.transform.eulerAngles.x + 90;
+            colunaRot.x = 180f;
+        }
+        else
+        {
+            modeloPlayer.transform.eulerAngles = new Vector3(0, 90, 0);
+            colunaRot.z = -gun.transform.eulerAngles.x - 90;
+            colunaRot.x = 0f;
+        }
+
+        colunaRot.y = 0f;
+        colunaPlayer.transform.eulerAngles = colunaRot;
     }
 
     private bool IsAlive() {
@@ -49,7 +72,16 @@ public class PlayerController : MonoBehaviour {
         forca_movimento = new Vector3(forca_lado, forca_cima, 0);
 		forca_convertida = transform.TransformDirection(forca_movimento);
 		cc.Move(forca_convertida);
-        
+
+        CallAnimations();
+    }
+
+    private void CallAnimations()
+    {
+        if (forca_lado != 0)
+            animPlayer.SetTrigger("Run");
+        else
+            animPlayer.SetTrigger("Idle");
     }
 
     void OnControllerColliderHit(ControllerColliderHit col)
