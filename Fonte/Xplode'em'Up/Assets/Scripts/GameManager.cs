@@ -46,11 +46,17 @@ public class GameManager : MonoBehaviour {
 		currentTimer.text = "Timer: " + Time.timeSinceLevelLoad.ToString("0:00");
     }
 
-    public static void ResetStage() {
-		SceneManager.LoadScene("StageTest");
-	}
+    public static void ResetStage()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
-	public static void TogglePause() {
+    public static void ResetGame()
+    {
+        SceneManager.LoadScene("StageTest");
+    }
+
+    public static void TogglePause() {
 		gm.currentTimeScale = gm.currentTimeScale == 0 ? 1 : 0;
 		gm.SetTimeScale();
 	}
