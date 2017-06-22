@@ -3,43 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
+    private AudioSource audioSource;
+
     public float speed = 10f;
     public float lifetime = 1f;
 	public float damage = 30;
     public GameObject explosao;
+    public AudioClip somHit;
 
-	void Update () {
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update () {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         Destroy(gameObject, lifetime);
         
 	}
 
     private void OnTriggerEnter(Collider col) {
-        //Should destroy on any collision
-        if (col.transform.tag.Equals("ShieldOrc"))
-        {
-           
-            Debug.Log("Acertou Shield");
-       }
-        if (col.transform.tag.Equals("Inimigo"))
-        {
-            Debug.Log("Acertou Inimigo");
-           
-        }
-        if (col.transform.tag.Equals("Cubo"))
-        {
-            Debug.Log("Acertou Cubo");
-        }
-        if (col.transform.tag.Equals("Floor"))
-        {
-            Debug.Log("Acertou Floor");
-        }
-        if (col.transform.tag.Equals("Wall"))
-        {
-            Debug.Log("Acertou Floor");
-        }
-
         Instantiate(explosao, transform.position, transform.rotation);
+        audioSource.clip = somHit;
+        audioSource.Play();
         Destroy(gameObject);
     }
 
